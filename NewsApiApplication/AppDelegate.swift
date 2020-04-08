@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         ReachabilityManager.shared.startMonitoring()
-        
+        AppearanceUIHelper.customizeAppearance()
+
+        let vc = ArticlesViewController.instance()
+        let requestModel = PagingRequestModel<TopHeadlineNewsRequestModel>(requestModel: TopHeadlineNewsRequestModel())
+        vc.viewModel.request = .getTopHeadline(requestModel: requestModel)
+        window?.rootViewController = UINavigationController(rootViewController: vc)
+        window?.makeKeyAndVisible()
         return true
     
     }

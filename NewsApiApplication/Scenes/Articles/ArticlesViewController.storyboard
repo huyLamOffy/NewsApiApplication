@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cL0-9B-xSe">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Articles View Controller-->
+        <scene sceneID="cNT-iF-3JP">
+            <objects>
+                <viewController id="cL0-9B-xSe" customClass="ArticlesViewController" customModule="NewsApiApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="APa-lq-ixe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Od5-fB-tp9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="chm-Hw-Eiz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-FS-Zdl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vdV-FS-Zdl" firstAttribute="top" secondItem="APa-lq-ixe" secondAttribute="bottom" id="Bj1-2S-wEH"/>
+                            <constraint firstAttribute="bottom" secondItem="vdV-FS-Zdl" secondAttribute="bottom" id="GO1-lF-DgP"/>
+                            <constraint firstAttribute="trailing" secondItem="vdV-FS-Zdl" secondAttribute="trailing" id="frY-wt-hIZ"/>
+                            <constraint firstItem="vdV-FS-Zdl" firstAttribute="leading" secondItem="chm-Hw-Eiz" secondAttribute="leading" id="vzd-Pf-C6Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vdV-FS-Zdl" id="MeF-4F-hff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBx-ez-XGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="64"/>
+        </scene>
+    </scenes>
+</document>

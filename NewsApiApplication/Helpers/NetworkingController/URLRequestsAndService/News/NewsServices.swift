@@ -12,8 +12,7 @@ import RxSwift
 struct NewsService {
     var clientRequest = APIRequest()
  
-    func getHeadlineNews(with requestModel: PagingRequestModel<TopHeadlineNewsRequestModel>) -> Observable<Result<NewsResponse, APIError>> {
-            let route = NewsURLRequests.getTopHeadline(requestModel: requestModel)
-            return clientRequest.requestObject(route: route)
+    func getNews(with route: NewsURLRequests) -> Observable<Result<NewsResponse, APIError>> {
+        return clientRequest.requestObject(route: route)
     }
 }

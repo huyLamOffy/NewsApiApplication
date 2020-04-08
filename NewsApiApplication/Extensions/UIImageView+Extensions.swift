@@ -16,13 +16,25 @@ extension UIImageView {
                       contentMode mode: UIView.ContentMode = .scaleAspectFit,
                       placeholderImage: UIImage? = UIImage(named: "img_placeholder"),
                       shouldResize: Bool = false,
-                      completionHandler: CompletionHandler? = nil) {
-        contentMode = mode
+                      completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) {
         
         guard let url = URL(string: link ?? "") else {
                 image = placeholderImage
                 return
         }
+        kfDownloaded(fromUrl: url,
+                     contentMode: mode,
+                     placeholderImage: placeholderImage,
+                     shouldResize: shouldResize,
+                     completionHandler: completionHandler)
+    }
+    
+    func kfDownloaded(fromUrl url: URL?,
+                      contentMode mode: UIView.ContentMode = .scaleAspectFit,
+                      placeholderImage: UIImage? = UIImage(named: "img_placeholder"),
+                      shouldResize: Bool = false,
+                      completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) {
+        contentMode = mode
         let scale = UIScreen.main.scale
         var options: KingfisherOptionsInfo = [
             .scaleFactor(scale),

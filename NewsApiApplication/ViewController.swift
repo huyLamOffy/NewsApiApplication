@@ -15,14 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        run(after: 3.0) {
-            let requestModel = PagingRequestModel<TopHeadlineNewsRequestModel>(requestModel: TopHeadlineNewsRequestModel())
-            self.service.getHeadlineNews(with: requestModel)
-                .subscribe { (result) in
-                    print(result)
-            }.disposed(by: self.disposeBag)
-            
-        }
     }
 
 
