@@ -14,7 +14,7 @@ class ArticlesViewModel {
     var progressStatus = PublishSubject<ProgressStatus>()
     var articles = BehaviorRelay<[Article]>(value: [])
     let service = NewsService()
-    var request: NewsURLRequests!
+    var request: NewsURLRequests = .getTopHeadline(requestModel: PagingRequestModel(requestModel: TopHeadlineNewsRequestModel()))
     let disposeBag = DisposeBag()
     
     func loadArticles() {

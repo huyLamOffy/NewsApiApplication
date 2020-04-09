@@ -14,4 +14,5 @@ enum Constant {
     static var pageSize: Int {
         return isIpad ? 30 : 15
     }
+    static var blueThemeColor: UIColor { UIColor(red: 17/255, green: 113/255, blue: 138/255, alpha: 1.0) }
 }

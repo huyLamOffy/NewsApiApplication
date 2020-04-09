@@ -11,22 +11,16 @@ import Foundation
 extension UserDefaults {
     enum KeyName {
         
-        case firstLaunch
+        case userPhoneNumber
+        case userPassword
         
         var name: String {
             switch self {
-            case .firstLaunch:
-                return "kFirstLaunch"
+            case .userPhoneNumber:
+                return "kUserPhoneNumber"
+            case .userPassword:
+                return "kUserPassword"
             }
-        }
-    }
-    
-    static var firstLaunch: Bool {
-        get {
-            return UserDefaults.standard[.firstLaunch] ?? true
-        }
-        set {
-            UserDefaults.standard[.firstLaunch] = newValue
         }
     }
 }

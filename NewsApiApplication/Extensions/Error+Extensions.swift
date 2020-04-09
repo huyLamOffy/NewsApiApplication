@@ -13,6 +13,8 @@ extension Error {
         var message = localizedDescription
         if let apiError = self as? APIError {
             message = apiError.localizedDescription
+        } else if let inputError = self as? InputError {
+            message = inputError.localizedDescription
         }
         return message
     }

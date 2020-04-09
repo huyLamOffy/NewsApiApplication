@@ -17,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ReachabilityManager.shared.startMonitoring()
         AppearanceUIHelper.customizeAppearance()
 
-        let vc = KeywordArticlesViewController.instance()
-//        let requestModel = PagingRequestModel<TopHeadlineNewsRequestModel>(requestModel: TopHeadlineNewsRequestModel())
-//        vc.viewModel.request = .getTopHeadline(requestModel: requestModel)
-        window?.rootViewController = UINavigationController(rootViewController: vc)
-        window?.makeKeyAndVisible()
         return true
     
     }

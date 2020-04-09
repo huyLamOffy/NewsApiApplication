@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JS7-hP-QdR">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Profile View Controller-->
+        <scene sceneID="279-gs-6lh">
+            <objects>
+                <viewController id="JS7-hP-QdR" customClass="UserProfileViewController" customModule="NewsApiApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wJZ-7b-1JC"/>
+                        <viewControllerLayoutGuide type="bottom" id="T4i-uY-qCb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DJo-tw-kBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-oE-C40">
+                                <rect key="frame" x="10" y="10" width="300" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-9J-YiX">
+                                <rect key="frame" x="10" y="54" width="300" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9g9-XE-BiB">
+                                <rect key="frame" x="10" y="98" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.4431372549" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9g9-XE-BiB" firstAttribute="top" secondItem="YlO-9J-YiX" secondAttribute="bottom" constant="10" id="1h9-fP-YBz"/>
+                            <constraint firstItem="zAa-oE-C40" firstAttribute="leading" secondItem="DJo-tw-kBZ" secondAttribute="leading" constant="10" id="Bee-Bk-HiI"/>
+                            <constraint firstAttribute="trailing" secondItem="zAa-oE-C40" secondAttribute="trailing" constant="10" id="MAq-22-WOm"/>
+                            <constraint firstItem="YlO-9J-YiX" firstAttribute="trailing" secondItem="zAa-oE-C40" secondAttribute="trailing" id="MQb-qY-j8G"/>
+                            <constraint firstItem="YlO-9J-YiX" firstAttribute="leading" secondItem="zAa-oE-C40" secondAttribute="leading" id="cFw-aM-fPg"/>
+                            <constraint firstItem="9g9-XE-BiB" firstAttribute="trailing" secondItem="YlO-9J-YiX" secondAttribute="trailing" id="dnG-xk-sRK"/>
+                            <constraint firstItem="9g9-XE-BiB" firstAttribute="leading" secondItem="YlO-9J-YiX" secondAttribute="leading" id="lVj-YG-e9e"/>
+                            <constraint firstItem="zAa-oE-C40" firstAttribute="top" secondItem="wJZ-7b-1JC" secondAttribute="bottom" constant="10" id="n5n-fH-AEG"/>
+                            <constraint firstItem="YlO-9J-YiX" firstAttribute="top" secondItem="zAa-oE-C40" secondAttribute="bottom" constant="10" id="slX-8p-NlH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="YlO-9J-YiX" id="hoK-Y7-5dM"/>
+                        <outlet property="phoneTextField" destination="zAa-oE-C40" id="7LU-mA-SqK"/>
+                        <outlet property="registerButton" destination="9g9-XE-BiB" id="0yo-ZT-o4D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBm-pF-9Td" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="75"/>
+        </scene>
+    </scenes>
+</document>
