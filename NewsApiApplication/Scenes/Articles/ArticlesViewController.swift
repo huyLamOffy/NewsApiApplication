@@ -20,10 +20,8 @@ class ArticlesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.loadArticles()
 
-        run(after: 2.0) {
-            self.viewModel.loadArticles()
-        }
     }
     
     override func configureUI() {

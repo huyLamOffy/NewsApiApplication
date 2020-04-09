@@ -11,11 +11,9 @@ import Foundation
 extension Error {
     var message: String {
         var message = localizedDescription
-//        if let apiError = self as? APIError {
-//            message = apiError.localizedDescription
-//        } else if let inputError = self as? InputError {
-//            message = inputError.localizedDescription
-//        }
+        if let apiError = self as? APIError {
+            message = apiError.localizedDescription
+        }
         return message
     }
 }

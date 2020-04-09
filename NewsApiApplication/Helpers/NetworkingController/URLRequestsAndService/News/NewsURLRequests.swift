@@ -37,7 +37,3 @@ enum NewsURLRequests: RouterURLRequestConvertible {
     }
     
 }
-
-enum Keyword: String, Encodable {
-    case bitcoin, apple, earthquake, animal
-}

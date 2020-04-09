@@ -29,11 +29,6 @@ class APIRequest {
     }
     
     func requestObject<T: Decodable>(route: URLRequestConvertible, completion: @escaping (Result<T, APIError>) -> Void) {
-        guard ReachabilityManager.shared.isNetworkAvailable else {
-            completion(.failure(.noInternet))
-            return
-        }
-        
         sessionManager
             .request(route)
             .responseDecodableObject(queue: queue, decoder: decoder) { (response: AFDataResponse<T>) in
@@ -53,23 +48,16 @@ class APIRequest {
 extension APIRequest {
     func requestObject<T: Decodable>(route: URLRequestConvertible) -> Observable<Result<T, APIError>> {
         return Observable.create { (observable) in
-            if ReachabilityManager.shared.isNetworkAvailable {
-                
-                self.sessionManager
-                    .request(route)
-                    .responseDecodableObject(completionHandler: { (response: AFDataResponse<T>) in
-                        switch response.result {
-                        case .success(let object):
-                            observable.onNext(.success(object))
-                        case .failure(let error):
-                            observable.onNext(.failure(APIError.custom(message: error.localizedDescription)))
-                        }
-                    })
-                
-            } else {
-                observable.onNext(.failure(APIError.noInternet))
-            }
-            
+            self.sessionManager
+                .request(route)
+                .responseDecodableObject(completionHandler: { (response: AFDataResponse<T>) in
+                    switch response.result {
+                    case .success(let object):
+                        observable.onNext(.success(object))
+                    case .failure(let error):
+                        observable.onNext(.failure(APIError.custom(message: error.localizedDescription)))
+                    }
+                })
             return Disposables.create()
         }
     }

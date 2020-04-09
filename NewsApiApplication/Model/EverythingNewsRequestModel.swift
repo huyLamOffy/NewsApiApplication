@@ -9,7 +9,7 @@
 import Foundation
 
 struct EverythingNewsRequestModel: Encodable {
-    var keyword: Keyword
+    var keyword: KeywordArticle
 
     enum CodingKeys: String, CodingKey {
         case keyword = "q"

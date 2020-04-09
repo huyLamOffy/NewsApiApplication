@@ -21,8 +21,8 @@ enum AppearanceUIHelper {
         UIToolbar.appearance().barTintColor = blueThemeColor
         UIToolbar.appearance().tintColor = UIColor.white
 
-        // UISwitch
-        UISwitch.appearance().onTintColor = blueThemeColor
+        // UISegmentedControl
+        UISegmentedControl.appearance().tintColor = .white
 
         // TabBar
         UITabBar.appearance().isTranslucent = false

@@ -26,7 +26,6 @@ class ArticlesViewModelTests: XCTestCase {
         viewModel.articles.asDriver()
         .skip(1)
             .drive(onNext: { articles in
-                print(articles.first)
                 XCTAssertFalse(articles.isEmpty)
                 expectation.fulfill()
             })
